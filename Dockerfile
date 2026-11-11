@@ -1,2 +1,2 @@
-FROM evolutionapi/evolution-api:latest
+FROM ghcr.io/evolutionapi/evolution-api:v2.2.0
 EXPOSE 8080
