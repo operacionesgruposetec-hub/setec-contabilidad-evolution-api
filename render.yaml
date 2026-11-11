@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: setec-contabilidad-evolution-api
+    env: docker
+    plan: starter
+    envVars:
+      - key: SERVER_URL
+        value: https://setec-contabilidad-evolution-api.onrender.com
+      - key: AUTHENTICATION_API_KEY
+        value: "SETEC_CONTA_SECURE_KEY_2026"
+      - key: DATABASE_PROVIDER
+        value: postgresql
+      - key: DATABASE_CONNECTION_URI
+        fromDatabase:
+          name: setec-conta-db
+          property: connectionString
+
+databases:
+  - name: setec-conta-db
+    databaseName: setecconta
+    plan: starter
